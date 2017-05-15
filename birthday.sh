@@ -26,8 +26,8 @@ info=($(tail -n +2 $datesFile))
 for ((i=0; i < ${#info[@]}; i += 2)); do
   if [ $today == ${info[i]} ]; then
     echo "$message" | mail -s "Happy Birthday" ${info[i+1]}
-	if [ "$me" != "" ]; then
+    if [ "$me" != "" ]; then
       echo "$message" | mail -s "Happy Birthday To ${info[i+1]}" $me
-	fi
+    fi
   fi
 done
